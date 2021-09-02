@@ -1,63 +1,63 @@
 const fs = require('fs');
 const path = require('path');
 
-// const mkDir1800_1 = path.join(__dirname, '1800_1');
-// fs.mkdir(mkDir1800_1, {recursive:true}, err => {
-//     if(err) console.log(err);
-// });
-//
-// const mkDir2000_1 = path.join(__dirname, '2000_1');
-// fs.mkdir(mkDir2000_1, {recursive:true}, err => {
-//     if(err) console.log(err);
-// });
+const mkDir1800_1 = path.join(__dirname, '1800_1');
+fs.mkdir(mkDir1800_1, {recursive:true}, err => {
+    if(err) console.log(err);
+});
+
+const mkDir2000_1 = path.join(__dirname, '2000_1');
+fs.mkdir(mkDir2000_1, {recursive:true}, err => {
+    if(err) console.log(err);
+});
 
 const femaleClass = path.join(__dirname, '1800_1');
 const maleClass = path.join(__dirname, '2000_1');
 
-//
-// const textPathAlina = path.join(__dirname, '1800_1', 'Alina.json');
-// const textPathVika = path.join(__dirname, '2000_1', 'Vika.json');
-// const textPathGala = path.join(__dirname, '2000_1', 'Gala.json');
-// const textPathAndriy = path.join(__dirname, '2000_1', 'Andriy.json');
-// const textPathViktor = path.join(__dirname, '1800_1', 'Viktor.json');
-// const textPathMax = path.join(__dirname, '1800_1', 'Max.json');
-// const textPathDaniil = path.join(__dirname, '1800_1', 'Daniil.json');
-//
-// const infoAlina = '{"name": "Alina", "gender": "female"}';
-// const infoVika = '{"name": "Vika", "gender": "female"}';
-// const infoGala = '{"name": "Gala", "gender": "female"}';
-// const infoAndriy = '{"name": "Andriy", "gender": "male"}';
-// const infoViktor = '{"name": "Viktor", "gender": "male"}';
-// const infoMax = '{"name": "Max", "gender": "male"}';
-// const infoDaniil = '{"name": "Daniil", "gender": "male"}';
-//
-// fs.writeFile(textPathAlina, infoAlina, err => {
-//     if(err) console.log(err);
-// });
-//
-// fs.writeFile (textPathVika, infoVika, err => {
-//     if(err) console.log(err);
-// });
-//
-// fs.writeFile (textPathGala, infoGala, err => {
-//     if(err) console.log(err);
-// });
-//
-// fs.writeFile(textPathAndriy, infoAndriy, err => {
-//     if(err) console.log(err);
-// });
-//
-// fs.writeFile(textPathViktor, infoViktor, err => {
-//     if(err) console.log(err);
-// });
-//
-// fs.writeFile(textPathMax, infoMax, err => {
-//     if(err) console.log(err);
-// });
-//
-// fs.writeFile(textPathDaniil, infoDaniil, err => {
-//     if(err) console.log(err);
-// })
+
+const textPathAlina = path.join(__dirname, '1800_1', 'Alina.json');
+const textPathVika = path.join(__dirname, '2000_1', 'Vika.json');
+const textPathGala = path.join(__dirname, '2000_1', 'Gala.json');
+const textPathAndriy = path.join(__dirname, '2000_1', 'Andriy.json');
+const textPathViktor = path.join(__dirname, '1800_1', 'Viktor.json');
+const textPathMax = path.join(__dirname, '1800_1', 'Max.json');
+const textPathDaniil = path.join(__dirname, '1800_1', 'Daniil.json');
+
+const infoAlina = '{"name": "Alina", "gender": "female"}';
+const infoVika = '{"name": "Vika", "gender": "female"}';
+const infoGala = '{"name": "Gala", "gender": "female"}';
+const infoAndriy = '{"name": "Andriy", "gender": "male"}';
+const infoViktor = '{"name": "Viktor", "gender": "male"}';
+const infoMax = '{"name": "Max", "gender": "male"}';
+const infoDaniil = '{"name": "Daniil", "gender": "male"}';
+
+fs.writeFile(textPathAlina, infoAlina, err => {
+    if(err) console.log(err);
+});
+
+fs.writeFile (textPathVika, infoVika, err => {
+    if(err) console.log(err);
+});
+
+fs.writeFile (textPathGala, infoGala, err => {
+    if(err) console.log(err);
+});
+
+fs.writeFile(textPathAndriy, infoAndriy, err => {
+    if(err) console.log(err);
+});
+
+fs.writeFile(textPathViktor, infoViktor, err => {
+    if(err) console.log(err);
+});
+
+fs.writeFile(textPathMax, infoMax, err => {
+    if(err) console.log(err);
+});
+
+fs.writeFile(textPathDaniil, infoDaniil, err => {
+    if(err) console.log(err);
+})
 
 const sort = (directoryPath, gender, folder) => {
     fs.readdir(directoryPath, (err, files) => {
@@ -93,3 +93,4 @@ const sort = (directoryPath, gender, folder) => {
 
 sort(femaleClass, 'male', maleClass)
 sort(maleClass, 'female', femaleClass)
+
