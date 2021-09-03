@@ -66,35 +66,37 @@ const dirToReadPath = path.join(__dirname, 'dir');
 // });
 
 
-// fs.rmdir(path.join(dirToReadPath), err => {
+// fs.rmdir(path.join(dirToReadPath), err => {                          // удаляє папку
 //     console.log(err);
 // })
 
-// fs.unlink(path.join(__dirname, 'dir', 'text2.txt'), err => {
+// fs.unlink(path.join(__dirname, 'dir', 'text2.txt'), err => {         // удаляє файл
 //     console.log(err);
 // });
 
-// fs.rename(textPath, folderWithDeletedDate, err => {
+// fs.rename(textPath, folderWithDeletedDate, err => {                 // переміщає та змінює ім'я файла
 //     console.log(err);
 // });
 
 // const util = require('util');
-// const appendPromise = util.promisify(fs.appendFile);
+// const appendPromise = util.promisify(fs.appendFile);                 //ертає промісіфіковану функцію
 //
-// appendPromise(folderWithDeletedDate, 'TEXT DATA БОГДАН WITH PROMISE \n')
-//     .catch(reason => {
+// appendPromise(folderWithDeletedDate, 'TEXT DATA БОГДАН WITH PROMISE \n').catch(reason => {
 //         console.log(reason);
 //     })
 
+
+//          ----------            STREAM             ----------
+
 // const readStream = fs.createReadStream(folderWithDeletedDate);
 //
-// readStream.on('data', chunk => {
+// readStream.on('data', chunk => {                               //  chunk = 64Kb
 //     console.log(chunk);
 // });
 
 
-const readStream = fs.createReadStream(folderWithDeletedDate);
-const writeStream = fs.createWriteStream(textPath);
+const readStream = fs.createReadStream(folderWithDeletedDate);  // читає дані стрімами
+const writeStream = fs.createWriteStream(textPath);             //записує дані стрімами
 
 console.time('STREAM');
 readStream.on('data', chunk => {
