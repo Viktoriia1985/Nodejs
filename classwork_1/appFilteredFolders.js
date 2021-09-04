@@ -27,8 +27,11 @@ fs.rename(newPathFolder, renamePathFolder, err => {
 })
 
 fs.mkdir(movedFiles, { recursive: true }, err => {
-    if (err) console.log(err);
+    if (err) {
+        console.log(err);
+    }
 });
+
 
 function moveFiles(dirForEdit) {
 
